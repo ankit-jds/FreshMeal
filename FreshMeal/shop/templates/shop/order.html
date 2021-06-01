@@ -1,0 +1,130 @@
+<html>
+<head>
+    {% load static %}
+    <title>Checkout Card</title>
+    <link href='https://www.soengsouy.com/favicon.ico' rel='icon' type='image/x-icon'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- library validate -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js"></script>
+
+    <link rel="stylesheet" href="{% static '/shop/css/order.css'%}">
+ 
+</head>
+<body>
+    
+<!-- nav bar  -->
+
+<section class="order-page">
+<h1>Checkout</h1>
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form  method="post" id="validate" action="/shop/order/"> 
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-50">
+                        <input type="hidden" name="itemsJson" id="itemsJson">
+                        <h3>Billing Address</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Your Name" required>
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="Your Email" required>
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                        <input type="text" id="address" name="address" placeholder="Your Address" required>
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        <input type="text" id="city" name="city" placeholder="Your City" required>
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="state">State</label>
+                                <input type="text" id="state" name="state" placeholder="Your state"required>
+                            </div>
+                            <div class="col-50">
+                                <label for="zip">Pin Code</label>
+                                <input type="text" id="pincode" name="pincode" placeholder="Your area pin code"required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="fname">No Worries about payments. Pay when you get your order. <br> All type of payment options are avalible.</label>
+                    </div>
+                </div>
+                <input type="submit" value="Continue to checkout" class="btn">
+            </form>
+        </div>
+    </div>
+    <div class="col-25">
+        <div class="container">
+            <p >Total 
+            <b><span class="price" style="color:black" > 
+               &#8377; <span id="totalPrice"></b></span>
+                </span></p>
+        </div>
+    </div>
+</div>
+</section>
+<footer class="copyright">
+    <div>
+        Copyright © 2021 .All rights reserved by FreshMeal.</a>.
+    </div>
+</footer> 
+
+
+<!-- script validate js -->
+<script>
+    $('#validate').validate({
+        roles: {
+            fullname: {
+                required: true,
+            },
+            email: {
+                required: true,
+            },
+            address: {
+                required: true,
+            },
+            city: {
+                required: true,
+            },
+            state: {
+                required: true,
+            },
+            pincode: {
+                required: true,
+            },
+            
+           
+        },
+        messages: {
+            fullname:"Please input full name*",
+            email:"Please input email*",
+            city:"Please input city*",
+            address:"Please input address*",
+            state:"Please input state*",
+            pincode:"Please input address*",
+            
+        },
+    });
+    
+totalPrice=JSON.parse(localStorage.getItem('total'))
+document.getElementById('totalPrice').innerHTML = totalPrice;
+cart=JSON.parse(localStorage.getItem('cart'))
+
+$('#itemsJson').val(JSON.stringify(cart));
+{% if thank %}
+alert("Thanks for ordering with us. Your order id is {{id}}. Use it to track your order using our order tracker")
+localStorage.clear();
+document.location="/shop";
+{%endif%}
+
+
+</script>
+
+</body>
+</html

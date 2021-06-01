@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Info</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link rel="stylesheet" href="{% static 'shop/css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'shop/css/project_info.css'%}">
+  </head>
+  <body>
+    <div class="main-wrapper">
+        <div class="nav-background">
+            <div class="mobile-logo">
+                <img src="{% static 'shop/icons/logo.svg'%}" alt="">
+            </div>
+            <div class="mobile-nav">
+                <div class="cart">
+                    <!-- <div class="flex items-center">
+                        <img src="./icons/cart-dark.svg" alt="">
+                        <a href="#">0 Items - ($0.00)</a>
+                    </div> -->
+                </div>
+                <div class="nav-top">
+                    <ul>
+                        <li>
+                            <a href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#products">Products</a>
+                        </li>
+                        <li>
+                            <a href="#about">About us</a>
+                        </li>
+                        <li>
+                            <a href="#services">Services</a>
+                        </li>
+                        <li>
+                            <a href="#contact-us">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="Store.html">Store</a>
+                        </li>
+                         <li>
+                            <a href="project-info.html">Project Info</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact flex items-center">
+                    <img src="{% static 'shop/icons/phone.svg'%}" alt="">
+                    <div>
+                        <h5>Call us: (+91) 123 456 789</h5>
+                        <h6>E-mail : support@freshmeal.com</h6>
+                    </div>
+                </div>
+                <div class="time flex items-center">
+                    <img src="{% static 'shop/icons/clock.svg'%}" alt="">
+                    <div>
+                        <h5>Working Hours:</h5>
+                        <h6>Mon - Sat (8.00am - 5.00pm)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-content-wrapper">
+            <div class="nav-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-bar-chart">
+                    <line x1="12" y1="20" x2="12" y2="10" />
+                    <line x1="18" y1="20" x2="18" y2="4" />
+                    <line x1="6" y1="20" x2="6" y2="16" /></svg>
+            </div>
+            <div class="site-content">
+               <nav>
+                    <div class="top">
+                        <div class="container flex justify-between">
+                            <div class="contact flex items-center">
+                                <img src="{% static '/shop/icons/phone.svg'%}" alt="">
+                                <div>
+                                    <h5>Call US: (+91) 123 456 789</h5>
+                                    <h6>E-mail : support@freshmeal.com</h6>
+                                </div>
+                            </div>
+                            <div class="branding">
+                                <img src="{% static '/shop/icons/logo.svg'%}" alt="">
+                            </div>
+                            <div class="time flex items-center">
+                                <img src="{% static '/shop/icons/clock.svg'%}" alt="">
+                                <div>
+                                    <h5>Working Hours:</h5>
+                                    <h6>Mon - Sat (8.00am - 12.00am)</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar magic-shadow">
+                        <div class="container flex justify-center">
+                            <a href="/shop" >Home</a>
+                            <a href="index.html#products">Products</a>
+                            <a href="/shop/aboutus">About us</a>
+                            <a href="index.html#services">Services</a>
+                            <a href="index.html#contact-us">Contact us</a>
+                            <a href="/shop/cart" class="active">Store</a>
+                            <a href="/shop/project_info">Project Info</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- <header class="hero flex items-center"> -->
+                    <div class="info-container" id="home">
+                        <!-- <div class="welcome flex items-center">
+                            <span>Welcome to</span>
+                            <img src="./icons/logo-2.svg" alt="">
+                        </div> -->
+                        <h1>The  <span>Project Info.</span></h1>
+                        <h2>PBL Project.</h2>
+                         <div class="logo-box"><img class="logo-img" src="{% static '/shop/icons/logo-2.svg'%}" alt=""> </div> 
+                        
+                        <div class="info-stud">
+                           <p>Guided by :- Prof. Mangesh Ghonge Sir</p>
+                           <hr style="width:15%;text-align:center; margin: 15px auto; ">
+                           <div class="info-card">
+                            <h3>Team FreshMeal</h3>
+                            <ul>
+                                <li>1) Vaishnavi Aher (A-38)</li>
+                                <li>2) Divya Patil (A-47)</li>
+                                <li>3) Shital Khairnar (B-29)</li>
+                                <li>4) Ankit Tamboli (B-37)</li>
+                                <li>5) Anand Suryawanshi (B-38)</li>
+                            </ul>
+                           </div>
+                           
+                        </div>
+                        <div class="download-btn">
+                            <button > <a href="">Report</a>  </button>
+                            <button> <a href="">Presentation</a> </button></div>
+                        <!-- <div class="hero-image">
+                            <img src="./images/straw.png" alt="">
+                        </div> -->
+                    </div>
+                <!-- </header> -->
+                    
+                       
+                <footer class="copyright">
+                    <div>
+                        Copyright © 2021 .All rights reserved by FreshMeal.</a>.
+                    </div>
+                </footer> 
+               
+<!-- !! script part  -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="{% static '/shop/js/app.js'%}"></script>
+  </body>
+</html>
